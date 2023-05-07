@@ -1,5 +1,7 @@
 #include <iostream>
-#include "../blackjack.h"
+#include <stdlib.h>
+#include <time.h>
+#include "include/Menu.h"
 
 using namespace std;
 
