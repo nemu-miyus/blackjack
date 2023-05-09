@@ -18,6 +18,7 @@ Deck::Deck()
         }
     }
 
+    m_CardsIndex = 0;
     shuffleDeck();
 }
 
