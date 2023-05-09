@@ -1,34 +1,51 @@
 #pragma once
 #include "Hand.h"
+#include <time.h>       // time for srand
+#include <iostream>     // cout
+
+const static std::string c_CardSuits[] = { "Clubs",
+                                           "Diamonds",
+                                           "Hearts",
+                                           "Spades"
+                                          };
+const static std::string c_CardNames[] = { "Ace",
+                                           "Two",
+                                           "Three",
+                                           "Four",
+                                           "Five",
+                                           "Six",
+                                           "Seven",
+                                           "Eight",
+                                           "Nine",
+                                           "Ten",
+                                           "Jack",
+                                           "Queen",
+                                           "King"
+                                         };
 
 class Deck {
 public:
-    Deck() {
-        std::string cardSuit[] = { "Clubs" , "Diamonds" , "Hearts" , "Spades" };
-        std::string cardName[] = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
+    Deck();
 
-        int index = 0;
-        for (std::string suit : cardSuit)
-        {
-            int value = 1;
-            for (std::string name : cardName)
-            {
-                if (value >= 10) {
-                    value = 10;
-                }
-                deckList[index] = Card(name, suit, value);
-                value++;
-                index++;
-            }
-        }
+    // Randomly shuffle deck order
+    void shuffleDeck();
 
-        ShuffleDeck();
-    }
-    void ShuffleDeck();
-    void IncreaseDeckIndex();
-    void Deal(Hand& someonesHand);
+    // Deal a card from the deck to a hand (maybe change this to return string)
+    void deal(Hand& someonesHand);
+
+    // Shuffle deck and reset index
+    void reset();
 private:
-    Card deckList[DECK_SIZE];
+    // Swap two cards
     void swap(Card& a, Card& b);
-    int deckIndex = 0;
+
+    Card    m_Cards[c_DeckSize];
+    int     m_CardsIndex;
 };
+
+inline void Deck::swap(Card& a, Card& b)
+{
+    Card temp = a;
+    a = b;
+    b = temp;
+}

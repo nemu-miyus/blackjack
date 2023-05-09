@@ -3,20 +3,25 @@
 
 class Game {
 public:
-    Game() {
-        this->sessionDeck = Deck();
-        this->dealerHand = Hand("Dealer");
-        this->playerHand = Hand("You");
-    }
-    void PrintHandValues();
-    void HitMe();
-    void Stand();
-    void GiveHint();
-    void NewSession();
-    int DealerHandValue();
-    int PlayerHandValue();
+    Game();
+
+    // Deal a card to the player hand
+    void hitMe();
+
+    // Deal cards to dealer hand until blackjack or bust
+    void stand();
+
+    // Give a hint based on current hands
+    void giveHint() const;
+
+    // Resets hands and deck
+    void newSession();
+
+    int  getDealerHandValue() const;
+    int  getPlayerHandValue() const;
+    void printHandValues() const;
 private:
-    Deck sessionDeck;
-    Hand dealerHand;
-    Hand playerHand;
+    Deck    m_Deck;
+    Hand    m_DealerHand;
+    Hand    m_PlayerHand;
 };

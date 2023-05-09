@@ -2,18 +2,31 @@
 #include <string>
 
 class Card {
-public:
-    Card() {}
-    Card(std::string name, std::string suit, int value) {
-        this->name = name;
-        this->suit = suit;
-        this->value = value;
-    }
-    std::string GetCardName();
-    std::string GetSuit();
-    int GetCardValue();
-private:
-    std::string name = "Name";
-    std::string suit = "Suit";
-    int value = 0;
+  public:
+      Card();
+      Card(const std::string &name, const std::string &suit, const int &value);
+
+      // Accessors
+      std::string    getName() const;
+      std::string    getSuit() const;
+      int            getValue() const;
+  private:
+      std::string    m_Name;
+      std::string    m_Suit;
+      int            m_Value;
 };
+
+inline std::string Card::getName() const
+{
+    return m_Name;
+}
+
+inline std::string Card::getSuit() const
+{
+    return m_Suit;
+}
+
+inline int Card::getValue() const
+{
+    return m_Value;
+}

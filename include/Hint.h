@@ -5,24 +5,12 @@
 
 class Hint {
 public:
-    Hint() {
-        std::ifstream inputfile("blackJack-play-suggestion.txt");
+    Hint();
 
-        if (!inputfile.is_open()) {
-            std::cout << "Error opening file";
-        }
-
-        for (int r = 0; r < TABLE_ROW; r++) {
-            for (int c = 0; c < TABLE_COLUMN; c++) {
-                inputfile >> hintTable[r][c];
-            }
-        }
-
-        inputfile.close();
-    }
-    void PrintSuggestion(Hand playerHand, Hand dealerHand);
+    // Return a suggestion for the player based on hands
+    std::string printSuggestion(Hand playerHand, Hand dealerHand);
 private:
-    static const int TABLE_ROW = 11;
-    static const int TABLE_COLUMN = 10;
-    char hintTable[TABLE_ROW][TABLE_COLUMN];
+    static const int c_TableRow = 11;
+    static const int c_TableColumn = 10;
+    char hintTable[c_TableRow][c_TableColumn];
 };
