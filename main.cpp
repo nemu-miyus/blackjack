@@ -1,14 +1,10 @@
-#include <iostream>
 #include <stdlib.h>
-#include <time.h>
 #include "include/Menu.h"
-
-using namespace std;
 
 int main()
 {
     Menu playMenu;
-    cout << "Let's play BlackJack!";
+    std::cout << "Let's play BlackJack!";
 
     while (true) {
         playMenu.StartGame();
@@ -24,7 +20,7 @@ int main()
         }
 
         playMenu.DetermineWinner();
-        cout << "Play again?\n";
+        std::cout << "Play again?\n";
     }
 
     return 0;
