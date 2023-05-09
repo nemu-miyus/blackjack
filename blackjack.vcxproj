@@ -20,6 +20,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Card.cpp" />
+    <ClCompile Include="src\Deck.cpp" />
+    <ClCompile Include="src\Hand.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Card.h" />
+    <ClInclude Include="include\Deck.h" />
+    <ClInclude Include="include\Game.h" />
+    <ClInclude Include="include\Hand.h" />
+    <ClInclude Include="include\Hint.h" />
+    <ClInclude Include="include\Menu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data\blackJack-play-suggestion.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
